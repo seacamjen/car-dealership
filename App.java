@@ -20,9 +20,10 @@ public class App {
     allVehicles.add(truck);
     allVehicles.add(crossover);
 
+    boolean programRunning = true;
 
-    while(true) {
-      System.out.println("Welcome to our car dealership. What would you like to do? Enter one of the following options: All Vehicles, Search Price, or Add Vehicle:");
+    while(programRunning) {
+      System.out.println("Welcome to our car dealership. What would you like to do? Enter one of the following options: All Vehicles, Search Price, Add Vehicle or Exit:");
 
       String navigationChoice = console.readLine();
 
@@ -72,7 +73,9 @@ public class App {
             System.out.println( userVehicle.mModel );
             System.out.println( userVehicle.mMiles );
             System.out.println( userVehicle.mPrice );
-      }else {
+      } else if (navigationChoice.equals("Exit")) {
+        programRunning = false;
+      } else {
         System.out.println("I'm sorry, we dont recognize your input");
       }
     }
